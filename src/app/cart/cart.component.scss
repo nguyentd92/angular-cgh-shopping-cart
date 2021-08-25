@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {background-color: #eeeeee;
+font-family: 'Open Sans', serif;
+font-size: 14px
+}
+
+.container-fluid {
+margin-top: 70px
+}
+
+.card-body {
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+padding: 1.40rem
+}
+
+.img-sm {
+width: 80px;
+height: 80px
+}
+
+.itemside .info {
+padding-left: 15px;
+padding-right: 7px
+}
+
+.table-shopping-cart .price-wrap {
+line-height: 1.2
+}
+
+.table-shopping-cart .price {
+font-weight: bold;
+margin-right: 5px;
+display: block
+}
+
+.text-muted {
+color: #969696 !important
+}
