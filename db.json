@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Women's Blouse",
+      "price_each": 16,
+      "size": "M",
+      "image_url": "/assets/images/bags/bag_1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Men's Plain TShirt Women's Blouse",
+      "price_each": 16,
+      "size": "M",
+      "image_url": "/assets/images/bags/bag_2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Women's Blouse",
+      "price_each": 16,
+      "size": "M",
+      "image_url": "/assets/images/bags/bag_3.jpeg"
+    }
+  ]
+}

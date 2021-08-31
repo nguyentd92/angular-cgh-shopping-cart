@@ -19,7 +19,7 @@ import { CartService } from './services/cart.service';
               <a class="nav-link" routerLink="/cart">Cart( {{ cartItemCount }})</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" routerLink="/admin">Admin</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
