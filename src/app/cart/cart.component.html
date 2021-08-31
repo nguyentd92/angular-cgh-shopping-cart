@@ -13,97 +13,74 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor='let item of cartItems'>
                                 <td>
                                     <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
-                                            <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                        <div class="aside"><img src="{{ item.product.image_url }}" class="img-sm"></div>
+                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{
+                                                item.product.name }}</a>
+                                            <p class="text-muted small">SIZE: {{ item.product.size }} <br> Brand: MAXTRA
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 </td>
-                                <td> <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select> </td>
                                 <td>
-                                    <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
-                                </td>
-                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="far fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
-                            </tr>
-                            <tr>
+                                    <input type='number' [value]='item.quantity'
+                                        (change)='changeQuantity(item.product, $event)' />
                                 <td>
-                                    <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/hqiAldf.jpg" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
-                                            <p class="text-muted small">SIZE: L <br> Brand: ADDA </p>
-                                        </figcaption>
-                                    </figure>
+                                    <div class="price-wrap"> <var class="price">{{ item.total | currency }}</var> <small
+                                            class="text-muted">
+                                            {{ item.product.price_each | currency }} each </small> </div>
                                 </td>
-                                <td> <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select> </td>
-                                <td>
-                                    <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
+                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist"
+                                        title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i
+                                            class="far fa-heart"></i></a>
+                                    <button type="button" class="btn btn-light" data-abc="true"
+                                        (click)='removeItemFromCart(item.product)'> Remove </button>
                                 </td>
-                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <figure class="itemside align-items-center">
-                                        <div class="aside"><img src="https://i.imgur.com/UwvU0cT.jpg" class="img-sm"></div>
-                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Printed White Tshirt</a>
-                                            <p class="small text-muted">SIZE:M <br> Brand: Cantabil</p>
-                                        </figcaption>
-                                    </figure>
-                                </td>
-                                <td> <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select> </td>
-                                <td>
-                                    <div class="price-wrap"> <var class="price">$9</var> <small class="text-muted"> $6 each</small> </div>
-                                </td>
-                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <pre>{{ cartItems | json }}</pre>
                 </div>
             </div>
         </aside>
         <aside class="col-lg-3">
             <div class="card mb-3">
                 <div class="card-body">
-                    <form>
+                    <div>
                         <div class="form-group"> <label>Have coupon?</label>
-                            <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                            <div class="input-group"> <input [(ngModel)]='code' type="text" class="form-control coupon" name=""
+                                    placeholder="Coupon code"> <span class="input-group-append"> <button
+                                        class="btn btn-primary btn-apply coupon" (click)='check()'>Apply</button>
+                                </span>
+                            </div>
                         </div>
-                    </form>
+
+                        <span>{{ selectedCoupon?.title }}</span>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <dl class="dlist-align">
                         <dt>Total price:</dt>
-                        <dd class="text-right ml-3">$69.97</dd>
+                        <dd class="text-right ml-3">{{ cartTotalPrice | currency }}</dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>Discount:</dt>
-                        <dd class="text-right text-danger ml-3">- $10.00</dd>
+                        <dd class="text-right text-danger ml-3">{{ discountValue | currency }}</dd>
                     </dl>
                     <dl class="dlist-align">
                         <dt>Total:</dt>
-                        <dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+                        <dd class="text-right text-dark b ml-3"><strong>{{ cartTotal | currency }}</strong></dd>
                     </dl>
-                    <hr> 
-                    <a href="#" class="btn btn-block btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> 
-                    <a href="#" class="btn btn-block btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                    <hr>
+                    <a href="#" class="btn btn-block btn-out btn-primary btn-square btn-main" data-abc="true"> Make
+                        Purchase </a>
+                    <a href="#" class="btn btn-block btn-out btn-success btn-square btn-main mt-2"
+                        data-abc="true">Continue Shopping</a>
                 </div>
             </div>
         </aside>

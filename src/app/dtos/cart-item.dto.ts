@@ -4,4 +4,6 @@ export type CartItemDto = {
     product: ProductDto;
 
     quantity: number;
+
+    total: number;
 }
