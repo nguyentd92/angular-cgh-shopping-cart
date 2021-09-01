@@ -20,6 +20,118 @@
       "price_each": 16,
       "size": "M",
       "image_url": "/assets/images/bags/bag_3.jpeg"
+    },
+    {
+      "name": "Berk Cruz",
+      "price_each": 81,
+      "size": "XXL",
+      "image_url": "",
+      "id": 4
+    },
+    {
+      "name": "Eleanor Sosa",
+      "price_each": 64,
+      "size": "L",
+      "image_url": "",
+      "id": 5
+    },
+    {
+      "name": "Dara Silva",
+      "price_each": 97,
+      "size": "XS",
+      "image_url": "",
+      "id": 6
+    },
+    {
+      "name": "Kato Drake",
+      "price_each": 75,
+      "size": "XL",
+      "image_url": "",
+      "id": 7
+    },
+    {
+      "name": "Hollee Nicholson",
+      "price_each": 81,
+      "size": "L",
+      "image_url": "",
+      "id": 8
+    },
+    {
+      "name": "Linda Mcconnell",
+      "price_each": 84,
+      "size": "M",
+      "image_url": "",
+      "id": 9
+    },
+    {
+      "name": "Yolanda Nicholson",
+      "price_each": 50,
+      "size": "S",
+      "image_url": "",
+      "id": 10
+    },
+    {
+      "name": "Neil Blevins",
+      "price_each": 57,
+      "size": "L",
+      "image_url": "",
+      "id": 11
+    },
+    {
+      "name": "Angelica Knapp",
+      "price_each": 25,
+      "size": "M",
+      "image_url": "",
+      "id": 12
+    },
+    {
+      "name": "Caldwell Oneil",
+      "price_each": 14,
+      "size": "S",
+      "image_url": "",
+      "id": 13
+    },
+    {
+      "name": "Adrian Kinney",
+      "price_each": 6,
+      "size": "L",
+      "image_url": "",
+      "id": 14
+    },
+    {
+      "name": "Clarke Gross",
+      "price_each": 27,
+      "size": "XL",
+      "image_url": "",
+      "id": 15
+    },
+    {
+      "name": "Zia Atkinson",
+      "price_each": 32,
+      "size": "XXL",
+      "image_url": "",
+      "id": 16
+    },
+    {
+      "name": "Clio Brady",
+      "price_each": 31,
+      "size": "XL",
+      "image_url": "",
+      "id": 17
+    },
+    {
+      "name": "Winter Franks",
+      "price_each": 96,
+      "size": "L",
+      "image_url": "",
+      "id": 18
+    },
+    {
+      "name": "Charde Chan",
+      "price_each": 33,
+      "size": "L",
+      "image_url": "",
+      "id": 19
     }
   ]
 }

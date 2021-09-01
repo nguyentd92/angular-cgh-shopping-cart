@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
@@ -12,7 +12,7 @@ import { AdminProductService } from './services/admin-product.service';
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule,
+        ReactiveFormsModule,
         RouterModule.forChild([
             {
                 path: '',

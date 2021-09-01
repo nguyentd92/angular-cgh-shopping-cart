@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ProductDto } from "src/app/dtos/product.dto";
 
-const endpoint = 'http://localhost:3000/products/'
+const endpoint = 'products/'
 
 @Injectable()
 export class AdminProductService {
